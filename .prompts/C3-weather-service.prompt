@@ -1,0 +1,7 @@
+Create a second .NET 9 class-library backend that returns the weather for a given city. Validate the incoming JWT from the request context using the exact same signing key, issuer, and audience as the authentication service.
+
+The weather data comes from an external graft at https://dotnetweatherapi.onrender.com/ — inspect its published contract first, consume it through its official graft package (don't hand-write an HTTP/SDK client), and map its response to a simple flat DTO exposing the fields the frontend needs (such as city, country, temperature, condition, humidity, wind, and last-updated).
+
+Make sure graft packages restore correctly during the Docker build, and host the service via gg with the same browser-JWT options as the other service. Add it to docker-compose.yml on ports 8081:80 and its HTTP/2 endpoint on 8990:8989.
+
+Just implement, don't run.

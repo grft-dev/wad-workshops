@@ -1,0 +1,7 @@
+Create the first backend service as a .NET 9 class library that handles user authentication. It should let a caller log in with a username and password, checked against a small fixed in-memory set of users (include a demo user: wad / password), and on success return the issued token together with the username as a simple result.
+
+Issue JWTs signed with a shared signing key and a fixed issuer and audience, and keep these settings in one shared place — the other services must reuse the exact same values later.
+
+Host the service in Docker, enabling the options needed so the browser can send JWT headers later (request context, HTTP/2 server, and permissive CORS). Add a docker-compose.yml that exposes the service on ports 8080:80 and its HTTP/2 endpoint on 8989:8989.
+
+Just implement, don't run.

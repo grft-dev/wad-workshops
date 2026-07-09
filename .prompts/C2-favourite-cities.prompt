@@ -1,0 +1,5 @@
+Extend the authentication service so each user has an in-memory list of favourite cities (seed the demo user with a handful of well-known cities from different countries) and expose a way to retrieve the favourite cities of the currently authenticated caller as a simple list.
+
+Don't accept a token as a parameter — determine the caller's identity from the incoming request context (the Authorization / bearer header), and reject requests that don't carry a valid JWT.
+
+Just implement, don't run.

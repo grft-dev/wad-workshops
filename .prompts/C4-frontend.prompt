@@ -1,0 +1,5 @@
+Create a React + Vite frontend (TypeScript, run locally — no Docker) that talks to both backend services through their grafts, installed from the terminal.
+
+Bring the services up with docker compose, wait until both are ready, and install each service's graft package from its own registry route (install them separately, each with its own registry).
+
+The user should be able to log in, see their favourite cities, and view the weather for a selected city.
