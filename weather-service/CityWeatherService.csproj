@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>CityWeatherService</AssemblyName>
+    <RootNamespace>CityWeatherService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Graftcode.Context" Version="1.0.0" />
+    <PackageReference Include="graft.nuget.weatherservice" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\shared\SharedJwt\SharedJwt.csproj" />
+  </ItemGroup>
+
+</Project>

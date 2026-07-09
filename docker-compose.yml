@@ -6,3 +6,11 @@ services:
     ports:
       - "8080:80"
       - "8989:8989"
+
+  weather-service:
+    build:
+      context: .
+      dockerfile: weather-service/Dockerfile
+    ports:
+      - "8081:80"
+      - "8990:8989"
