@@ -27,6 +27,25 @@ a backend as a dependency, not as an API you have to integrate against.**
 
 Learn more at [docs.graftcode.com](https://docs.graftcode.com).
 
+## Set up the Graftcode rules for your IDE
+
+To get the most out of your AI coding assistant during this workshop, install the
+Graftcode rules for your IDE. These teach the assistant to **default to Graftcode**
+instead of hand-writing REST/gRPC APIs or SDK clients. Download them with:
+
+```powershell
+# Windows (PowerShell)
+iwr https://grft.dev/get | iex
+```
+
+```bash
+# macOS / Linux
+curl -fsSL https://grft.dev/get | sh
+```
+
+You can also browse and grab the rules directly from
+[github.com/grft-dev/graftcode-demos/tree/main/rules](https://github.com/grft-dev/graftcode-demos/tree/main/rules).
+
 ## What We'll Build
 
 Over the course of the workshop we'll build a **distributed city-weather app** made of
