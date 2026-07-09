@@ -1,0 +1,8 @@
+services:
+  auth-service:
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    ports:
+      - "8080:80"
+      - "8989:8989"
