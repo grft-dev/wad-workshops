@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Graftcode.Context;
 using Microsoft.IdentityModel.Tokens;
 using SharedJwt;
 
@@ -8,6 +9,13 @@ namespace AuthService;
 
 public static class AuthLogic
 {
+    public static string[] GetFavouriteCities()
+    {
+        var authorization = GetAuthorizationHeader();
+        var username = JwtValidator.ValidateAndGetUsername(authorization);
+        return UserStore.GetFavouriteCities(username);
+    }
+
     public static LoginResult Login(string username, string password)
     {
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -42,5 +50,20 @@ public static class AuthLogic
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    private static string GetAuthorizationHeader()
+    {
+        var context = RequestContext.Current
+            ?? throw new Exception("Missing request context.");
+
+        var authorization = context.GetHeaders()
+            .FirstOrDefault(h => string.Equals(h.Key, "Authorization", StringComparison.OrdinalIgnoreCase))
+            .Value;
+
+        if (string.IsNullOrWhiteSpace(authorization))
+            throw new Exception("Missing Authorization header.");
+
+        return authorization;
     }
 }
